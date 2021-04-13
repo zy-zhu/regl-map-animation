@@ -43,11 +43,8 @@
                 .thresholds([0, 1, 100, 1000])
                 .duration(2000)
                 .delayAtEnd(2000)
-                .pointWidth(4)
-                .xAxisTitle("Number of hospital beds")
-                .yAxisTitle("Hospitals")
-                .binLabels(true)
-                .binLabelOffsetX(30)
+                .pointWidth(4)          
+                .binLabels(False)
                 .binXLabelFunction(function (bin, nextBin) {
                     if (bin.value == 0) {
                         return "No data"
@@ -59,9 +56,8 @@
                         }
                     }
                 })
-                .legend(true)
+                .legend(false)
                 .legendHeight(150)
-                .legendTitle("Number of beds")
                 .projectionFunction(d3.geoAzimuthalEqualArea().scale(1400).center([14, 50]).translate([780, 500]))
                 .animate();
         });
